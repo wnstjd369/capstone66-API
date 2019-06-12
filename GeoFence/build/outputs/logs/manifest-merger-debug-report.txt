@@ -1,0 +1,93 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+	package
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:4:3-52
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:3:3-49
+	android:versionCode
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:1-44:12
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:6:3-65
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:6:20-62
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:7:3-77
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:7:20-74
+application
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:9:3-42:17
+	android:supportsRtl
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:15:5-31
+	android:label
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:13:5-37
+	tools:ignore
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:17:5-44
+	android:roundIcon
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:14:5-50
+	android:icon
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:12:5-39
+	android:allowBackup
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:11:5-31
+	android:theme
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:16:5-36
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:10:5-32
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:27:5-29:49
+	android:value
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:29:7-46
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:28:7-52
+activity#com.android.raywenderlich.remindmethere.MainActivity
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:31:5-39:16
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:31:15-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:33:7-37:23
+action#android.intent.action.MAIN
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:34:9-61
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:34:17-58
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:36:9-69
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:36:19-66
+activity#com.android.raywenderlich.remindmethere.NewReminderActivity
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:40:5-53
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:40:15-50
+service#com.android.raywenderlich.remindmethere.GeofenceTransitionsIntentService
+ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:41:5-64
+	android:name
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml:41:14-62
+uses-sdk
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\wnstj\Downloads\capstone66-API\capstone66-API\GeoFence\src\main\AndroidManifest.xml
