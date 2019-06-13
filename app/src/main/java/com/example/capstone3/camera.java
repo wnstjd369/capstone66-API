@@ -40,6 +40,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class camera extends AppCompatActivity implements AutoPermissionsListener {
     ImageView imageView;
@@ -135,56 +137,6 @@ public class camera extends AppCompatActivity implements AutoPermissionsListener
             startActivityForResult(intent, 101);
         }
         imgUri = fileUri;
-//        if(imgUri != null) {
-//            final ProgressDialog dialog = new ProgressDialog(this);
-//            dialog.setTitle("Uploading...");
-//            dialog.show();
-//
-//            //Get the storage reference
-//            final StorageReference ref = mStorageRef.child(FB_STORAGE_PATH + System.currentTimeMillis()+ "." +getImageExt(imgUri));
-//
-//            //Add file to reference
-//            ref.putFile(imgUri)
-//                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                            ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                                @Override
-//                                public void onSuccess(Uri uri) {
-//                                    downloadUrl = uri.toString();
-//                                    Time now = new Time(Time.getCurrentTimezone());
-//                                    now.setToNow();
-//                                    String title = now.format("%y%m%d");
-//                                    ImageUpload imageUpload = new ImageUpload(title, downloadUrl); // title = 날짜
-//                                    Log.d("title",title);
-//                                    //Toast.makeText(getApplicationContext(), title, Toast.LENGTH_SHORT).show();
-//
-//                                    mDatabaseRef.child(uploadId).setValue(imageUpload);
-//                                    dialog.dismiss();
-//                                    /*
-//                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                                    intent.putExtra("ID", uploadId); // 부모아이디 전송
-//                                    startActivity(intent);
-//                                    */
-//                                }
-//                            });
-//                        }
-//                    }).addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    dialog.dismiss();
-//                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-//                }
-//            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-//                    double progress = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-//                    dialog.setMessage("Uploaded " +(int)progress+ "%");
-//                }
-//            });
-//        }else{
-//            Toast.makeText(this, "Please select image", Toast.LENGTH_SHORT).show();
-//        }
     }
 
     private File createFile() {
@@ -221,6 +173,9 @@ public class camera extends AppCompatActivity implements AutoPermissionsListener
             now.setToNow();
             final String plus = uploadId+"/";
             final String date = now.format("%y%m%d");
+
+            SimpleDateFormat sdf = new SimpleDateFormat("HH시 mm분 ss초");
+            final String date2 = sdf.format(new Date(System.currentTimeMillis()));
             //Get the storage reference
             final StorageReference ref = mStorageRef.child(FB_STORAGE_PATH+plus+date+ "." +getImageExt(imgUri));
 
@@ -234,8 +189,8 @@ public class camera extends AppCompatActivity implements AutoPermissionsListener
                             downloadUrl = uri.toString();
 
 
-                            ImageUpload imageUpload = new ImageUpload(date, downloadUrl); // title = 날짜
-                            Log.d("title",date);
+                            ImageUpload imageUpload = new ImageUpload(date2, downloadUrl); // title = 날짜
+                            Log.d("title",date2);
 
 
                             mDatabaseRef.child(uploadId).setValue(imageUpload);

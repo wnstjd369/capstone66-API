@@ -26,7 +26,7 @@
         android:text="'8시 45분'에 " />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/timeview2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -41,22 +41,13 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-
-            android:text="용돈 관리"
-            android:textColor="#ffffffff" />
-
-        <Button
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:background="@color/colorPrimaryDark"
 
-            android:text="미션관리"
+            android:text="LOCK OFF"
             android:textColor="#ffffffff" />
 
         <Button
@@ -64,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            android:text="학생관리"
+            android:text="LOCK ON"
             android:textColor="#ffffffff" />
     </LinearLayout>
 

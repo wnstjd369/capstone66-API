@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -50,14 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabaseref;
     private DatabaseReference uDatabaseref;
-
+    private DatabaseReference tDatabaseref;
 
     private String uploadId;
     private String uploadId2;
     private String fileLink;
-    private String date;
+    private String date,date2;
     private ImageView imageView;
     private String urii;
+
+    private TextView timeView;
+    private TextView timeView2;
 
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser user = mAuth.getCurrentUser();
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main0);
         Log.d("LOG2","2");
 
         uploadId = getIntent().getStringExtra("Name"); //부모이름
@@ -75,12 +79,30 @@ public class MainActivity extends AppCompatActivity {
 
         Time now = new Time(Time.getCurrentTimezone());
         now.setToNow();
-        final String date = now.format("%y%m%d");
+        date = now.format("%y%m%d");
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
         vStorageRef = mStorageRef.child("image/"+uploadId2+"/"+date+".jpg");
 
         uDatabaseref = FirebaseDatabase.getInstance().getReference("users");
+        tDatabaseref = FirebaseDatabase.getInstance().getReference("image");
+
+
+        if (tDatabaseref.child(uploadId2) != null) {
+            tDatabaseref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    ImageUpload imageUpload = dataSnapshot.child(uploadId2).getValue(ImageUpload.class);
+                    date2 = imageUpload.getdate();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+
 
 
         imageView = findViewById(R.id.imageView);
@@ -89,17 +111,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Uri uri) {
                     urii = uri.toString();
-                   /*
-                    Glide.with(getApplicationContext())
-                            .load(vStorageRef)
-                            .into(imageView);
-                    */
+
                     Picasso.with(
                             getApplicationContext()).
                             load(urii).
                             fit().
                             centerInside().
                             into(imageView);
+
+                    timeView = findViewById(R.id.timeview);
+                    timeView.setText(date2);
 
                 }
             });
@@ -108,74 +129,8 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("주소",vStorageRef.toString());
 
-
-        /*
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference databaseReference = database.getReference("users");
-
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        */
-
-
-
-
-
-
-        //  if (user != null) {
-      /*      uploadId = getIntent().getStringExtra("Name");
-            uploadId2 = getIntent().getStringExtra("PName");
-            if (uploadId2 != null) {
-                mDatabaseref = FirebaseDatabase.getInstance().getReference("image").child(uploadId2);
-                mDatabaseref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        ImageUpload imageUpload = dataSnapshot.getValue(ImageUpload.class);
-
-                        vStorageRef =  mStorageRef.child("image/"+)
-                        if (dataSnapshot.child(uploadId2).exists()) {
-                            fileLink = imageUpload.getUrl();
-                            Log.d("fileLink", fileLink);
-                            Uri uri = Uri.parse(fileLink);
-                            Log.d("uri", uri.toString());
-
-                        /*
-                         ImageView draweeView = findViewById(R.id.imageView);
-                         draweeView.setImageURI(uri);
-                        */
-        //  urii = uri;
-        //   }
-        //    }
-/*
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-
-
-                });
-            }
-        /*} else {
-            signInAnonymously();
-        }*/
-        /*
-        if (urii != null) {
-            Glide.with(this)
-                    .load(urii)
-                    .into(imageView);
-        }
-        */
         Button button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
-        Button button6 = findViewById(R.id.button6);
 
         button4.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -191,30 +146,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "LOCK OFF", Toast.LENGTH_LONG).show();
             }
         });
-        button6.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), subActivity.class);
-                intent.putExtra("name","용돈관리");
-                startActivity(intent);
-
-
-            }
-        });
-    }
-    private void signInAnonymously() {
-        mAuth.signInAnonymously().addOnSuccessListener(this, new  OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                // do your stuff
-            }
-        })
-                .addOnFailureListener(this, new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        Log.e("FAIL", "signInAnonymously:FAILURE", exception);
-                    }
-                });
     }
 
 }
